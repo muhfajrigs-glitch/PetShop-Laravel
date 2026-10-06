@@ -1,0 +1,65 @@
+<?php
+
+namespace App\Policies;
+
+use App\Models\Product;
+use App\Models\User;
+
+class ProductPolicy
+{
+    /**
+     * Determine if the user can view any models.
+     */
+    public function viewAny(User $user): bool
+    {
+        return true; // Admin bisa lihat semua products
+    }
+
+    /**
+     * Determine if the user can view the model.
+     */
+    public function view(User $user, Product $product): bool
+    {
+        return true; // Admin bisa lihat detail product
+    }
+
+    /**
+     * Determine if the user can create models.
+     */
+    public function create(User $user): bool
+    {
+        return true; // Admin bisa create product
+    }
+
+    /**
+     * Determine if the user can update the model.
+     */
+    public function update(User $user, Product $product): bool
+    {
+        return true; // Admin bisa update product
+    }
+
+    /**
+     * Determine if the user can delete the model.
+     */
+    public function delete(User $user, Product $product): bool
+    {
+        return true; // Admin bisa delete product
+    }
+
+    /**
+     * Determine if the user can restore the model.
+     */
+    public function restore(User $user, Product $product): bool
+    {
+        return true;
+    }
+
+    /**
+     * Determine if the user can permanently delete the model.
+     */
+    public function forceDelete(User $user, Product $product): bool
+    {
+        return true;
+    }
+}

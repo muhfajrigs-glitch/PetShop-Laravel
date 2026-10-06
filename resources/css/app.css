@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+[x-cloak] {
+    display: none !important;
+}
+
+@theme {
+    --color-cream: #fffbf1;
+    --color-soft-yellow: #fff2d0;
+    --color-soft-pink: #ffb2b2;
+    --color-coral: #e36a6a;
+}
+
+@layer base {
+    /* Bagian body dihapus karena sudah diatur di app.blade.php */
+
+    a {
+        @apply text-coral hover:underline;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply px-4 py-2 rounded-lg bg-coral text-white hover:opacity-90 transition;
+    }
+
+    .btn-secondary {
+        @apply px-4 py-2 rounded-lg bg-soft-yellow text-gray-800 hover:opacity-80 transition;
+    }
+
+    .btn-danger {
+        @apply px-4 py-2 rounded-lg bg-red-500 text-white hover:bg-red-600 transition;
+    }
+
+    .card {
+        @apply bg-soft-yellow rounded-lg p-6 shadow-sm;
+    }
+
+    .input-field {
+        @apply w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-coral;
+    }
+}
